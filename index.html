@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Grin Tesnet1 Network</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading">
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<section id="main">
+						<header>
+							<span class="avatar"><img src="images/grin.png" alt="" /></span>
+							<h1>Grin Testnet1 Network</h1>
+							<h2 id="gnlatestblk">Latest block # is</br></h2>
+							<h2 id="gnblkhash">with BlockHash : </br></h2>
+						</header>
+					</section>
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>- <a href="https://twitter.com/a_ferron" target="_blank">Antoine FERRON</a> -</li>
+							<li><a href="https://github.com/antonio-fr/GrinTest" target="_blank">Code on Github</a> -</li>
+							<li>Send some Grins at http&#58;&#47;&#47;51&#46;255&#46;202&#46;83&#58;6543</li>
+						</ul>
+					</footer>
+			</div>
+		<!-- Scripts -->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+				$("#gnlatestblk").ready(function(){
+					$.ajax({
+						  url: 'https://factory.czam.me/v1/chain', dataType: 'json'
+						  })
+						.done(function(data) {
+						  $('#gnlatestblk').append(data["height"]);
+						  var blkhash = data["last_block_pushed"];
+						  $('#gnblkhash').append(blkhash.slice(0,6)+".."+blkhash.slice(-6));
+						  $('#gnblkhash')[0].title = blkhash;
+						})
+						.fail(function(data) {
+						  $('#gnlatestblk').append("not available");
+						  $('#gnblkhash').text(" - ");
+						})
+				  });
+			</script>
+	</body>
+</html>
