@@ -1,4 +1,4 @@
-function refreshdata(first=false){
+function refreshdata(first){
 	$.ajax({
 			url: 'https://factory.czam.me/v1/chain', dataType: 'json'
 		})
@@ -23,7 +23,7 @@ function refreshdata(first=false){
 		.fail(function(data) {
 			$('#gnlatestblk').html("Latest block # is</br>not available");
 			$('#gnblkhash').html(" - ");
-			setTimeout(refreshdata, 5000);
+			setTimeout(refreshdata, false, 5000);
 		});
 }
 $("#gnlatestblk").ready(function(){
