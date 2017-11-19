@@ -1,4 +1,4 @@
-function refreshdata(){
+function refreshdata(first=false){
 	$.ajax({
 			url: 'https://factory.czam.me/v1/chain', dataType: 'json'
 		})
@@ -7,6 +7,17 @@ function refreshdata(){
 			var blkhash = data["last_block_pushed"];
 			$('#gnblkhash').html('with BlockHash : <nobr>'+blkhash.slice(0,6)+'&#8943;'+blkhash.slice(-6)+'</nobr>');
 			$('#gnblkhash')[0].title = blkhash;
+			var blkheight = parseInt(data["height"])
+			if (first){
+				initblock = blkheight;
+			}
+			else{
+				rdeg = (blkheight-initblock)*360;
+				$('.avatar img').css("-moz-transform","rotate("+rdeg+"deg)");
+				$('.avatar img').css("-webkit-transform","rotate("+rdeg+"deg)");
+				$('.avatar img').css("-ms-transform","rotate("+rdeg+"deg)");
+				$('.avatar img').css("transform","rotate("+rdeg+"deg)");
+			}
 			setTimeout(refreshdata, 20000);
 		})
 		.fail(function(data) {
@@ -16,5 +27,5 @@ function refreshdata(){
 		});
 }
 $("#gnlatestblk").ready(function(){
-	refreshdata();
+	refreshdata(true);
 });
