@@ -710,10 +710,10 @@
 		-webkit-transform: rotateX(0deg);
 		-ms-transform: rotateX(0deg);
 		transform: rotateX(0deg);
-		-moz-transition: opacity 1s ease, -moz-transform 1s ease;
-		-webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
-		-ms-transition: opacity 1s ease, -ms-transform 1s ease;
-		transition: opacity 1s ease, transform 1s ease;
+		-moz-transition: opacity 1s ease, -moz-transform 1.2s ease-out;
+		-webkit-transition: opacity 1s ease, -webkit-transform 1.2s ease-out;
+		-ms-transition: opacity 1s ease, -ms-transform 1.2s ease-out;
+		transition: opacity 1s ease, transform 1.2s ease-out;
 	}
 
 		#main .avatar {
@@ -725,6 +725,10 @@
 			#main .avatar img {
 				display: block;
 				margin: 0 auto;
+				-moz-transition: -moz-transform 2s ease-out;
+				-webkit-transition: -webkit-transform 2s ease-out;
+				-ms-transition: -ms-transform 2s ease-out;
+				transition: transform 2s ease-out;
 			}
 
 
