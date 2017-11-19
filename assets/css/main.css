@@ -185,13 +185,13 @@
 		}
 
 	h1 {
-		font-size: 1.85em;
+		font-size: 2em;
 		letter-spacing: 0.1em;
 		margin: 0 0 0.525em 0;
 	}
 
 	h2 {
-		font-size: 1.25em;
+		font-size: 1.5em;
 	}
 
 	h3 {
@@ -213,7 +213,11 @@
 	@media screen and (max-width: 480px) {
 
 		h1 {
-			font-size: 1.65em;
+			font-size: 1.8em;
+		}
+		
+		h2 {
+			font-size: 1.4em;
 		}
 
 	}
@@ -693,8 +697,8 @@
 		position: relative;
 		max-width: 100%;
 		min-width: 27em;
-		padding: 4.5em 3em 3em 3em ;
-		background: #ffffff;
+		padding: 3.8em 3em 2.5em 3em ;
+		background: rgba(255,255,255,0.6);
 		border-radius: 16px;
 		cursor: default;
 		text-align: center;
@@ -729,7 +733,7 @@
 			#main {
 				min-width: 0;
 				width: 100%;
-				padding: 4em 2em 2.5em 2em ;
+				padding: 2.8em 2em 1.8em 2em ;
 			}
 
 
@@ -761,10 +765,15 @@
 			margin: 0;
 			padding: 0;
 			color: white;
-			font-size: 1.2em;
+			font-size: 1.6em;
 			list-style: none;
 		}
 
+		@media screen and (max-width: 480px) {
+			#footer .copyright {
+				font-size: 1.3em;
+			}
+		}
 			#footer .copyright li {
 				display: inline-block;
 				margin: 0 0 0 0em;
@@ -772,9 +781,10 @@
 				line-height: 1;
 			}
 
-				#footer .copyright li:first-child {
-					border-left: 0;
-				}
+			#footer .copyright li + li:before {
+				content: "–";
+				margin: 0 10px 0 10px;
+			}
 
 /* Wrapper */
 

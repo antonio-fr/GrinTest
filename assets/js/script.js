@@ -5,7 +5,7 @@ function refreshdata(){
 		.done(function(data) {
 			$('#gnlatestblk').html("Latest block # is</br>"+data["height"]);
 			var blkhash = data["last_block_pushed"];
-			$('#gnblkhash').html("with BlockHash : "+blkhash.slice(0,6)+".."+blkhash.slice(-6));
+			$('#gnblkhash').html('with BlockHash : <nobr>'+blkhash.slice(0,6)+'&#8943;'+blkhash.slice(-6)+'</nobr>');
 			$('#gnblkhash')[0].title = blkhash;
 			setTimeout(refreshdata, 20000);
 		})
