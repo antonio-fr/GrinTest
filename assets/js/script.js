@@ -1,6 +1,6 @@
 function refreshdata(first){
 	$.ajax({
-			url: 'https://factory.czam.me/v1/chain', dataType: 'json'
+			url: 'https://grintest.net/v1/chain', dataType: 'json'
 		})
 		.done(function(data) {
 			$('#gnlatestblk').html("Latest block # is</br>"+data["height"]);
