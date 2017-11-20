@@ -13,6 +13,7 @@ function refreshdata(first){
 			}
 			else{
 				rdeg = (blkheight-initblock)*360;
+				if (rdeg>1080) rdeg=1080;
 				$('.avatar img').css("-moz-transform","rotate("+rdeg+"deg)");
 				$('.avatar img').css("-webkit-transform","rotate("+rdeg+"deg)");
 				$('.avatar img').css("-ms-transform","rotate("+rdeg+"deg)");
