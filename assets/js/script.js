@@ -1,6 +1,8 @@
 function refreshdata(first){
 	$.ajax({
-			url: 'https://grintest.net/v1/chain', dataType: 'json'
+			url: 'https://grintest.net/v1/chain',
+			dataType: 'json',
+			cache: false
 		})
 		.done(function(data) {
 			$('#gnlatestblk').html("Latest block # is</br>"+data["height"]);
