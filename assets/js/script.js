@@ -28,6 +28,6 @@ function refreshdata(){
 			setTimeout(refreshdata, 5000);
 		});
 };
-$("#gnlatestblk").ready(function(){
+$(document).ready(function(){
 	refreshdata();
 });
