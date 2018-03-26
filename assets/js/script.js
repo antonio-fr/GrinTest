@@ -6,7 +6,7 @@ function refreshdata(){
 		})
 		.done(function(data) {
 			$('#gnlatestblk').html("Latest block # is</br>"+data["height"]);
-			var blkhash = data["hash"];
+			var blkhash = data["last_block_pushed"];
 			$('#gnblkhash').html('with BlockHash : <nobr>'+blkhash.slice(0,6)+'&#8943;'+blkhash.slice(-6)+'</nobr>');
 			$('#gnblkhash')[0].title = blkhash;
 			var blkheight = parseInt(data["height"])
