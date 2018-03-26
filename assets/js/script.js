@@ -15,6 +15,10 @@ function refreshdata(){
 				trot = 0;
 			}
 			trot += Math.min(blkheight-latestblk,3);
+			$('.avatar img').css("-moz-transform-origin","50% 50px");
+			$('.avatar img').css("-webkit-transform-origin","50% 50px");
+			$('.avatar img').css("-ms-transform-origin","50% 50px");
+			$('.avatar img').css("transform-origin","50% 50px");
 			$('.avatar img').css("-moz-transform","rotate("+trot+"turn)");
 			$('.avatar img').css("-webkit-transform","rotate("+trot+"turn)");
 			$('.avatar img').css("-ms-transform","rotate("+(trot*360)+"deg)");
