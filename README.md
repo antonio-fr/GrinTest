@@ -2,7 +2,7 @@
 GrinTest
 ===================
 
-A web service to monitor the [Grin](http://grin-tech.org/) testnet1 network
+A web service to monitor the [Grin](http://grin-tech.org/) testnet2 network
 
 This services runs at [grintest.net](https://grintest.net)
 
