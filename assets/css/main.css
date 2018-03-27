@@ -218,6 +218,7 @@
 		
 		h2 {
 			font-size: 1.4em;
+			margin: 0 0 0.5em 0;
 		}
 
 	}
@@ -719,7 +720,7 @@
 		#main .avatar {
 			position: relative;
 			display: block;
-			margin-bottom: 1.5em;
+			margin-bottom: 0.8em;
 		}
 
 			#main .avatar img {
